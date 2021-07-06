@@ -1,0 +1,14 @@
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Microsoft.Azure.Cosmos.ServiceInterop.dll
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Cosmos.CRTCompat.dll
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Bilbayt.Infrastructure.deps.json
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Bilbayt.Infrastructure.dll
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Bilbayt.Infrastructure.pdb
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Bilbayt.Core.dll
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\bin\Debug\netcoreapp3.1\Bilbayt.Core.pdb
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.AssemblyInfo.cs
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.csproj.CopyComplete
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.dll
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Infrastructure\obj\Debug\netcoreapp3.1\Bilbayt.Infrastructure.pdb
