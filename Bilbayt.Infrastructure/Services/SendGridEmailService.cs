@@ -52,7 +52,7 @@ namespace Bilbayt.Infrastructure.Services
         /// <returns></returns>
         public async Task SendEmailAsync(string toEmail, string toName, string subject, string message)
         {
-            SendGridMessage sendGridMessage = MailHelper.CreateSingleEmail(
+            var sendGridMessage = MailHelper.CreateSingleEmail(
                     new EmailAddress(this.FromEmail, this.FromName),
                     new EmailAddress(toEmail, toName),
                     subject,

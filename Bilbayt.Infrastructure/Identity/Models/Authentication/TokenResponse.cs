@@ -4,6 +4,10 @@ namespace Bilbayt.Infrastructure.Identity.Models.Authentication
 {
     public class TokenResponse
     {
+        public TokenResponse()
+        {
+            
+        }
         public TokenResponse(AppUser user, 
                              string token
                             )

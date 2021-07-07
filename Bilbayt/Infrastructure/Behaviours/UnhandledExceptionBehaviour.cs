@@ -36,7 +36,7 @@ namespace Bilbayt.Infrastructure.Behaviours
             }
             catch (Exception ex)
             {
-                string requestName = typeof(TRequest).Name;
+                var requestName = typeof(TRequest).Name;
 
                 Log.Error(ex, "Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
 

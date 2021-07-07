@@ -99,10 +99,10 @@ namespace Bilbayt.Models.AppUser
             /// <returns></returns>
             public async Task<bool> HasUniqueUsername(string username, CancellationToken cancellationToken)
             {
-                AppUserSearchSpecification specification = new AppUserSearchSpecification(username,
+                var specification = new AppUserSearchSpecification(username,
                                                                       exactSearch: true);
 
-                System.Collections.Generic.IEnumerable<Core.Entities.AppUser> entities = await _repo.GetItemsAsync(specification);
+                var entities = await _repo.GetItemsAsync(specification);
 
                 return entities == null || !entities.Any();
 
@@ -145,8 +145,8 @@ namespace Bilbayt.Models.AppUser
             /// <returns></returns>
             public async Task<CommandResponse> Handle(CreateAppUserCommand command, CancellationToken cancellationToken)
             {
-                CommandResponse response = new CommandResponse();
-                Core.Entities.AppUser entity = _mapper.Map<Core.Entities.AppUser>(command);
+                var response = new CommandResponse();
+                var entity = _mapper.Map<Core.Entities.AppUser>(command);
 
                 //hash password
                 entity.Password = _passwordManager.GetHashPassword(entity.Password);

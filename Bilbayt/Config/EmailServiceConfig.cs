@@ -1,8 +1,5 @@
 ﻿using Bilbayt.Core.Interfaces.Email;
-using Bilbayt.Core.Interfaces.Persistence;
 using Bilbayt.Infrastructure.AppSettings;
-using Bilbayt.Infrastructure.CosmosDbData.Repository;
-using Bilbayt.Infrastructure.Extensions;
 using Bilbayt.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

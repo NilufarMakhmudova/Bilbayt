@@ -1,7 +1,6 @@
 using System.Reflection;
 using AutoMapper;
 using Bilbayt.Infrastructure.Extensions;
-using Bilbayt.Infrastructure.Identity;
 using Bilbayt.Infrastructure.Identity.Models.Authentication;
 using Bilbayt.Config;
 using Microsoft.AspNet.OData.Extensions;

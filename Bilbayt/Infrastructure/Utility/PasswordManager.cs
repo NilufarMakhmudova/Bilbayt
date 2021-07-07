@@ -22,9 +22,9 @@ namespace Bilbayt.Infrastructure.Utility
             {
                 throw new ArgumentException("Correct hash must be 128 hex characters!");
             }
-            string salt = correctHash.Substring(0, 64);
-            string passHash = Sha256Hex(salt + password);
-            string newHash = salt + passHash;
+            var salt = correctHash.Substring(0, 64);
+            var passHash = Sha256Hex(salt + password);
+            var newHash = salt + passHash;
             return string.CompareOrdinal(correctHash, newHash) == 0;
         }
 

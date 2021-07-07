@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using Bilbayt.Core.Exceptions;
 using Bilbayt.Infrastructure.Identity.Models.Authentication;
 using Bilbayt.Infrastructure.Identity.Services;
@@ -85,11 +84,11 @@ namespace Bilbayt.Models.Token
             /// <returns></returns>
             public async Task<CommandResponse> Handle(AuthenticateCommand command, CancellationToken cancellationToken)
             {
-                CommandResponse response = new CommandResponse();
+                var response = new CommandResponse();
 
-                string ipAddress = _httpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+                var ipAddress = _httpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
 
-                TokenResponse tokenResponse = await _tokenService.Authenticate(command, ipAddress);
+                var tokenResponse = await _tokenService.Authenticate(command, ipAddress);
                 if (tokenResponse == null)
                 {
                     throw new InvalidCredentialsException();

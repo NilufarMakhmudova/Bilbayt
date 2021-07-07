@@ -22,10 +22,5 @@ namespace Bilbayt.Models.AppUser
         /// </summary>
         [Required]
         public string LastName { get; set; }
-       
-        /// <summary>
-        ///     Full name
-        /// </summary>
-        public string FullName => $"{FirstName} {LastName}";
     }
 }

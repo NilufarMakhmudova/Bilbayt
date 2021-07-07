@@ -72,7 +72,7 @@ namespace Bilbayt.Infrastructure.CosmosDbData.Repository
         {
             try
             {
-                ItemResponse<T> response = await _container.ReadItemAsync<T>(id, ResolvePartitionKey(id));
+                var response = await _container.ReadItemAsync<T>(id, ResolvePartitionKey(id));
                 return response.Resource;
             }
             catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -88,11 +88,11 @@ namespace Bilbayt.Infrastructure.CosmosDbData.Repository
         // String can also be hard to work with due to special characters and spaces when advanced querying like search and pagination is required.
         public async Task<IEnumerable<T>> GetItemsAsync(string queryString)
         {
-            FeedIterator<T> resultSetIterator = _container.GetItemQueryIterator<T>(new QueryDefinition(queryString));
-            List<T> results = new List<T>();
+            var resultSetIterator = _container.GetItemQueryIterator<T>(new QueryDefinition(queryString));
+            var results = new List<T>();
             while (resultSetIterator.HasMoreResults)
             {
-                FeedResponse<T> response = await resultSetIterator.ReadNextAsync();
+                var response = await resultSetIterator.ReadNextAsync();
 
                 results.AddRange(response.ToList());
             }
@@ -103,13 +103,13 @@ namespace Bilbayt.Infrastructure.CosmosDbData.Repository
         /// <inheritdoc cref="IRepository{T}.GetItemsAsync(Ardalis.Specification.ISpecification{T})"/>
         public async Task<IEnumerable<T>> GetItemsAsync(ISpecification<T> specification)
         {
-            IQueryable<T> queryable = ApplySpecification(specification);
-            FeedIterator<T> iterator = queryable.ToFeedIterator<T>();
+            var queryable = ApplySpecification(specification);
+            var iterator = queryable.ToFeedIterator<T>();
 
-            List<T> results = new List<T>();
+            var results = new List<T>();
             while (iterator.HasMoreResults)
             {
-                FeedResponse<T> response = await iterator.ReadNextAsync();
+                var response = await iterator.ReadNextAsync();
 
                 results.AddRange(response.ToList());
             }
@@ -120,7 +120,7 @@ namespace Bilbayt.Infrastructure.CosmosDbData.Repository
         /// <inheritdoc cref="IRepository{T}.GetItemsCountAsync(ISpecification{T})"/>
         public async Task<int> GetItemsCountAsync(ISpecification<T> specification)
         {
-            IQueryable<T> queryable = ApplySpecification(specification);
+            var queryable = ApplySpecification(specification);
             return await queryable.CountAsync();
         }
 
@@ -132,7 +132,7 @@ namespace Bilbayt.Infrastructure.CosmosDbData.Repository
         /// <returns></returns>
         private IQueryable<T> ApplySpecification(ISpecification<T> specification)
         {
-            CosmosDbSpecificationEvaluator<T> evaluator = new CosmosDbSpecificationEvaluator<T>();
+            var evaluator = new CosmosDbSpecificationEvaluator<T>();
             return evaluator.GetQuery(_container.GetItemLinqQueryable<T>(), specification);
         }
 

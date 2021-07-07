@@ -37,11 +37,11 @@ namespace Bilbayt.Infrastructure.Identity.Services
         {
             if (await IsValidUser(request.Username, request.Password))
             {
-                AppUser user = await GetUserByEmail(request.Username);
+                var user = await GetUserByEmail(request.Username);
 
                 if (user != null)
                 {
-                    string jwtToken = await GenerateJwtToken(user);
+                    var jwtToken = await GenerateJwtToken(user);
                     return new TokenResponse(user, jwtToken);
                 }
             }
@@ -53,7 +53,7 @@ namespace Bilbayt.Infrastructure.Identity.Services
         /// <inheritdoc cref="ITokenService.IsValidUser(string, string)" />
         public async Task<bool> IsValidUser(string username, string password)
         {
-            AppUser user = await GetUserByEmail(username);
+            var user = await GetUserByEmail(username);
 
             if (user == null)
             {
@@ -68,10 +68,10 @@ namespace Bilbayt.Infrastructure.Identity.Services
         /// <inheritdoc cref="ITokenService.GetUserByEmail(string)" />
         public async Task<AppUser> GetUserByEmail(string email)
         {
-            AppUserSearchSpecification specification = new AppUserSearchSpecification(email,
+            var specification = new AppUserSearchSpecification(email,
                 exactSearch: true);
 
-            System.Collections.Generic.IEnumerable<AppUser> entities = await _repo.GetItemsAsync(specification);
+            var entities = await _repo.GetItemsAsync(specification);
             return entities.FirstOrDefault();
         }
 
@@ -82,10 +82,10 @@ namespace Bilbayt.Infrastructure.Identity.Services
         /// <returns></returns>
         private async Task<string> GenerateJwtToken(AppUser user)
         {
-          byte[] secret = Encoding.ASCII.GetBytes(_token.Secret);
+          var secret = Encoding.ASCII.GetBytes(_token.Secret);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
-            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor
+            var handler = new JwtSecurityTokenHandler();
+            var descriptor = new SecurityTokenDescriptor
             {
                 Issuer = _token.Issuer,
                 Audience = _token.Audience,
@@ -100,7 +100,7 @@ namespace Bilbayt.Infrastructure.Identity.Services
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secret), SecurityAlgorithms.HmacSha256Signature)
             };
 
-            SecurityToken token = handler.CreateToken(descriptor);
+            var token = handler.CreateToken(descriptor);
             return handler.WriteToken(token);
         }
     }

@@ -21,8 +21,8 @@ namespace Bilbayt.Config
         /// <param name="configuration"></param>
         public static void SetupAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            Token token = configuration.GetSection("token").Get<Token>();
-            byte[] secret = Encoding.ASCII.GetBytes(token.Secret);
+            var token = configuration.GetSection("token").Get<Token>();
+            var secret = Encoding.ASCII.GetBytes(token.Secret);
 
             services
                 .AddAuthentication(

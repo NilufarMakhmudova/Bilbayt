@@ -23,8 +23,8 @@ namespace Bilbayt.Infrastructure.Extensions
                                                      string databaseName,
                                                      List<ContainerInfo> containers)
         {
-            Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, primaryKey);
-            CosmosDbContainerFactory cosmosDbClientFactory = new CosmosDbContainerFactory(client, databaseName, containers);
+            var client = new Microsoft.Azure.Cosmos.CosmosClient(account, primaryKey);
+            var cosmosDbClientFactory = new CosmosDbContainerFactory(client, databaseName, containers);
 
             // Microsoft recommends a singleton client instance to be used throughout the application
             // https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.cosmosclient?view=azure-dotnet#definition

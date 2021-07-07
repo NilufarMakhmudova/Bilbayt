@@ -1,7 +1,7 @@
 ﻿namespace Bilbayt.Infrastructure.CosmosDbData.Constants
 {
-    public class CosmosDbContainerConstants
+    public static class CosmosDbContainerConstants
     {
-        public const string CONTAINER_NAME = "bilbaytdbcontainer";
+        public const string ContainerName = "bilbaytdbcontainer";
     }
 }

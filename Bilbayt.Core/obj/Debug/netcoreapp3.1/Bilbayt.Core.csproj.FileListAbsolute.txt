@@ -3,6 +3,7 @@ C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\bin\Debug\netcoreapp3.1\Cosmos.
 C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\bin\Debug\netcoreapp3.1\Bilbayt.Core.deps.json
 C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\bin\Debug\netcoreapp3.1\Bilbayt.Core.dll
 C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\bin\Debug\netcoreapp3.1\Bilbayt.Core.pdb
+C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\obj\Debug\netcoreapp3.1\Bilbayt.Core.csproj.AssemblyReference.cache
 C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\obj\Debug\netcoreapp3.1\Bilbayt.Core.AssemblyInfoInputs.cache
 C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\obj\Debug\netcoreapp3.1\Bilbayt.Core.AssemblyInfo.cs
 C:\Users\mahmu\source\repos\Bilbayt\Bilbayt.Core\obj\Debug\netcoreapp3.1\Bilbayt.Core.csproj.CoreCompileInputs.cache

@@ -82,9 +82,9 @@ namespace Bilbayt.Models.AppUser
             /// <returns></returns>
             public async Task<QueryResponse> Handle(GetQuery query, CancellationToken cancellationToken)
             {
-                QueryResponse response = new QueryResponse();
+                var response = new QueryResponse();
 
-                Core.Entities.AppUser entity = await _repo.GetItemAsync(query.Id);
+                var entity = await _repo.GetItemAsync(query.Id);
                 if (entity == null)
                 {
                     throw new EntityNotFoundException(nameof(AppUser), query.Id);

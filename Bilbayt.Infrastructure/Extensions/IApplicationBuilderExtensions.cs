@@ -15,9 +15,9 @@ namespace Bilbayt.Infrastructure.Extensions
         /// <param name="builder"></param>
         public static void EnsureCosmosDbIsCreated(this IApplicationBuilder builder)
         {
-            using (IServiceScope serviceScope = builder.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            using (var serviceScope = builder.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                ICosmosDbContainerFactory factory = serviceScope.ServiceProvider.GetService<ICosmosDbContainerFactory>();
+                var factory = serviceScope.ServiceProvider.GetService<ICosmosDbContainerFactory>();
 
                 factory.EnsureDbSetupAsync().Wait();
             }

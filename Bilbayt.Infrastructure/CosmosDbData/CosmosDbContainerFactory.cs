@@ -44,9 +44,9 @@ namespace Bilbayt.Infrastructure.CosmosDbData
 
         public async Task EnsureDbSetupAsync()
         {
-            Microsoft.Azure.Cosmos.DatabaseResponse database = await _cosmosClient.CreateDatabaseIfNotExistsAsync(_databaseName);
+            var database = await _cosmosClient.CreateDatabaseIfNotExistsAsync(_databaseName);
 
-            foreach (ContainerInfo container in _containers)
+            foreach (var container in _containers)
             {
                 await database.Database.CreateContainerIfNotExistsAsync(container.Name, $"{container.PartitionKey}");
             }

@@ -1,0 +1,11 @@
+﻿namespace Bilbayt.WebClient.Models
+{
+    public class UserProfileResult : BaseResultModel
+    {
+        public string Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FullName => $"{FirstName} {LastName}";
+
+    }
+}

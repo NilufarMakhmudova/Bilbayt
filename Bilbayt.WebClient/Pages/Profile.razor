@@ -1,0 +1,54 @@
+@page "/profile/{id}"
+@using Bilbayt.WebClient.Models
+@inject IAuthService AuthService
+@inject NavigationManager NavigationManager
+
+@if (ShowSpinner)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <h1>Your profile page</h1>
+
+    @if (ShowErrors)
+    {
+        <div class="alert alert-danger" role="alert">
+            <p>@Error</p>
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">You got in!</h5>
+            <div class="card-body">
+                Your name: @profileModel?.FullName
+            </div>
+        </div>
+    </div>
+}
+@code {
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        ShowSpinner = true;
+        ShowErrors = false;
+        profileModel = await AuthService.GetProfile(Id);
+        if (!profileModel.IsSuccess)
+        {
+            Error = profileModel.ErrorMessage;
+            ShowErrors = true;
+        }
+        ShowSpinner = false;
+    }
+
+    [Parameter]
+    public string Id { get; set; }
+
+    private UserProfileResult profileModel;
+    private bool ShowErrors;
+    private bool ShowSpinner;
+    private string Error = "";
+
+}

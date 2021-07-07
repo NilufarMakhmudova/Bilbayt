@@ -21,7 +21,7 @@ namespace Bilbayt.Config
         public static void SetupCosmosDb(this IServiceCollection services, IConfiguration configuration)
         {
             // Bind database-related bindings
-            CosmosDbSettings cosmosDbConfig = configuration.GetSection("ConnectionStrings:Bilbayt").Get<CosmosDbSettings>();
+            var cosmosDbConfig = configuration.GetSection("ConnectionStrings:Bilbayt").Get<CosmosDbSettings>();
             // register CosmosDB client and data repositories
             services.AddCosmosDb(cosmosDbConfig.Account,
                                  cosmosDbConfig.PrimaryKey,

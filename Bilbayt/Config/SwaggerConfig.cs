@@ -23,7 +23,7 @@ namespace Bilbayt.Config
                 options.Title = "Bilbayt Cosmos DB API";
                 options.Version = "v1";
 
-                FluentValidationSchemaProcessor fluentValidationSchemaProcessor = serviceProvider.GetService<FluentValidationSchemaProcessor>();
+                var fluentValidationSchemaProcessor = serviceProvider.GetService<FluentValidationSchemaProcessor>();
                 // Add the fluent validations schema processor
                 options.SchemaProcessors.Add(fluentValidationSchemaProcessor);
 
